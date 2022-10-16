@@ -1,5 +1,5 @@
 import { Revise } from "revise-sdk";
-const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZjM2ZhMzg0LTJmMzYtNDhlNC1hYjI3LTI2MmIwZjJlNWZhMyIsImtleSI6IjB4OXExMG00IiwiaWF0IjoxNjY0MTQzNDQzfQ.sZAITgYVoi-27sayi6gTR5W4PGgHNybyvjNEW1CfXck"; //this needs to be replaced by the AUTH TOKEn you generate
+const AUTH_TOKEN = "????"; //this needs to be replaced by the AUTH TOKEn you generate
 const revise = new Revise({auth: AUTH_TOKEN});
 
 const collection = await revise.addCollection({
