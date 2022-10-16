@@ -2,7 +2,7 @@ import fetch from "node-fetch";
 
 // https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=7213a477744939cbb8d1efba2c603cc1
 
-const url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&units=metric&appid=7213a477744939cbb8d1efba2c603cc1"
+const url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&units=metric&appid="
 
 
 const weather_data = await fetch(url)
