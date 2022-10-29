@@ -7,12 +7,6 @@ const revise = new Revise({auth: AUTH_TOKEN});
 
 var seed = fs.readFileSync('../nft-metadata/temp0/seed.json', 'utf8');
 seed = JSON.parse(seed);
-var flowering_0temp = fs.readFileSync('../nft-metadata/temp0/flowering-0temp.json', 'utf8').toString();
-flowering_0temp = JSON.parse(flowering_0temp);
-var germination_0temp = fs.readFileSync('../nft-metadata/temp0/germination-0temp.json').toString();
-germination_0temp = JSON.parse(germination_0temp);
-var mature_0temp = fs.readFileSync('../nft-metadata/temp0/mature-0temp.json').toString();
-mature_0temp = JSON.parse(mature_0temp);
 
 
 // // adding metadata to revise
@@ -31,7 +25,7 @@ async function addDataToRevise(collection_name, collection_uri, data) {
   const tokenData = {
     "image" : seed['image'],
     "name" : seed['name'],
-    "tokenId" : "1",
+    "tokenId" : String(seed['token_id']),
     "description": seed['description']
   }
 
@@ -45,31 +39,5 @@ async function addDataToRevise(collection_name, collection_uri, data) {
   }
 }
 
-addDataToRevise("Pea-seeds1111111", "pea-seed1121111", seed);
-
-
-
-
-
-// const collection = await revise.addCollection({
-//     name: "peagotchi-seed-1",
-//     uri: "peagotch-2",
-//   });
-
-  // const nft = await revise.addNFT(
-  //   {
-  //     image:
-  //       "https://images.pexels.com/photos/13957041/pexels-photo-13957041.jpeg",
-  //     name: "Green Pea Flower",
-  //     tokenId: "1",
-  //     description: "It takes 38 days from seed to emergence, when the temperature is in optimal range 12-18.",
-  //     // url : "https://nicetotouch.eth.link/peppers"
-  //   },
-  //   [{Species : "Dingwan 2"}, {FarmerName : "Red Pepper"}, {SeedingDate : "15-March-2022"}, 
-  //       {GrowthDays : "40"}, {GrowthPeriod : "Seed to Mature"}],
-  //   collection.id
-  // );
-  // console.log(nft);
-
-  // revise collectin uri
-  // https://peagotch-2.revise.link/1
+// adding temp0 data to revise
+addDataToRevise("Peas for climate", "peas-for-climate", seed);
