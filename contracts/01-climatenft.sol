@@ -1,26 +1,34 @@
 // SPDX-License-Identifier: MIT
+// address : 0x7618f41e0B4bE75d0CA163987053A6AE9D92c7dA
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
+
 
 contract PeasForClimate is ERC721, ERC721URIStorage, Ownable {
 
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIdCounter;
     uint256 private _first_seed_date = 1665790200;
+    string baseuri = "https://revise.link/922577ee-b982-40b8-8b30-e15089b44938";
 
     constructor() ERC721("PeasForClimate", "PEAS") {}
 
+    // First seeded date
     function setFirstSeedTimestamp(uint256 newTimestamp) external onlyOwner {
         _first_seed_date = newTimestamp;
     }
 
-    function safeMint(address to, uint256 tokenId, string memory uri)
+    function safeMint()
         public
-        onlyOwner
     {
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _safeMint(msg.sender, tokenId);
+        _setTokenURI(tokenId, baseuri);
     }
 
     // The following functions are overrides required by Solidity.
@@ -39,7 +47,7 @@ contract PeasForClimate is ERC721, ERC721URIStorage, Ownable {
     }
 
     function total_days() public view returns(string memory) {
-        uint256 _b = block.timestamp;        
+        uint256 _b = block.timestamp;
         uint256 seconds_per_cycle = 3456000;
         uint256 total_secs = _b - _first_seed_date;
         uint256 currentsecs = total_secs % seconds_per_cycle;
