@@ -66,7 +66,8 @@
     <title>Peas for Climate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
-    <script type="module" src="../Scripts/read-json.js"></script>
+    <script src="https://unpkg.com/web3@latest/dist/web3.min.js"></script>
+    <script type="module" src="../Scripts/index.js"></script>
   </head>
   <body>
     <!-- Just an image -->
@@ -88,29 +89,49 @@
       <a class="navbar-link" href="https://testnets.opensea.io/assets/mumbai/0x7618f41e0b4be75d0ca163987053a6ae9d92c7da/0">
         Open Sea
       </a>
-           <button  type="button" class="btn btn-primary cta-button">Connect Wallet</button>
+           <button id="connect-metamask" type="button" class="btn btn-primary cta-button">Connect Metamask</button>
           </li>
           </ul>
           </div>
       <script type="module">
-                // document.getElementById("p1").innerHTML = temp;
+        // Connect to Metamask
+        document.getElementById('connect-metamask').addEventListener('click', event => {
+        let account;
+        let button = event.target;
+        ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+          account = accounts[0];
+          console.log(account);
+          button.textContent = account;
+
+          ethereum.request({method: 'eth_getBalance' , params: [account, 'latest']}).then(result => {
+            console.log(result);
+            let wei = parseInt(result,16);
+            let balance = wei / (10**18);
+            console.log(balance + " ETH");
+          });
+        });
+      });
     </script>
   </nav>
   <div class="container"><br>
     <h1>Welcome to Peagotchi collectables</h1>
-    <p>Contract Address : 0x0000000000000000000000000000000000000000</p>
+    <p>Contract Address : 0x7618f41e0b4be75d0ca163987053a6ae9d92c7da</p>
     <br>
     <br>
     <div class="row">
       <div class="col-6">
-          <div class="card" style="width:500px">
+          <div class="card" style="width:400px">
               <img class="card-img" src="../images/01/1-germinate.png" alt="...">
               <div class="card-img-overlay overlay-yellow text-white d-flex justify-content-center align-items-end">
                 <p>Germinate</p>
               </div>
           </div>
+          <br>
+          <div>
+            <button id="mint-seed" type="button" class="btn btn-primary" style="width:400px">Mint on Polygon</button>
+          </div>
       </div>
-      <div class="col-3">
+      <div class="col-6">
         <div class="card" style="width:500px" text-align="center">
             <p class="text-center">Name : "Green Pea Seed"</p>
             <p class="text-center">Soil Temp: 17</p>
@@ -121,6 +142,8 @@
             <p class="text-center">Total Days: 20</p>
         </div> 
     </div>
+    
+  </div>
     <br>
     <br>
     <h4>Growth in Optimal Temperature(12-18)</h4>
