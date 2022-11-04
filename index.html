@@ -61,15 +61,26 @@ nav {
   font-family: 'VT323', sans-serif !important;
 }
 
+.navbar-inner {
+    background:#bd35d1e3;
+    opacity: 0.6;
+}
+
 body {
   font-family: 'VT323', sans-serif !important;
 }
 
 .bg-image {
-        background-image: url("../images/back-ground.svg");
+        background-image: url("../images/background-new.svg");
         background-size: cover;
         height: 100%;
       }
+
+.container-bg {
+  background-image: url("../images/bg3.png");
+  background-size: cover;
+  height: 100%;
+}
 
 </style>
 
@@ -105,7 +116,7 @@ body {
       <a class="navbar-link" href="https://testnets.opensea.io/assets/mumbai/0x7618f41e0b4be75d0ca163987053a6ae9d92c7da/0">
         Open Sea
       </a>
-           <button id="connect-metamask" type="button" class="btn btn-primary cta-button">Connect Metamask</button>
+           <button id="connect-metamask" type="button" class="btn" style="background-color: #f4d03f;">Connect Metamask</button>
           </li>
           </ul>
           </div>
@@ -129,38 +140,48 @@ body {
       });
     </script>
   </nav>
-  <div class="container-fluid bg-image">
+  <div class="container-fluid container-bg">
     <!-- background image -->
-    <h1><b>WELCOME TO PEAGOTCHI COLLECTABLES</b></h1>
-    <p>Contract Address : 0x7618f41e0b4be75d0ca163987053a6ae9d92c7da</p>
+    <h1 class="text-white"><b>WELCOME TO PEAGOTCHI COLLECTABLES</b></h1>
+    <p class="text-white">Contract Address : 0x7618f41e0b4be75d0ca163987053a6ae9d92c7da</p>
     <br>
     <br>
     <div class="row">
       <div class="col-3"></div>
       <div class="col-4">
-          <div class="card-transparent" style="width:400px">
-              <img class="card-img" src="../images/01/1-germinate.png" alt="...">
+          <div class="card-transparent" style="width:400px; height:auto; padding: 0;">
+              <img class="card-img" src="../images/01/1-germinate.png" alt="..." style="height: 50%;">
               <div class="card-img-overlay overlay-yellow text-white d-flex justify-content-center align-items-end">
-                <p>Germinate</p>
               </div>
           </div>
           <br>
           <div>
-            <button id="mint-seed" type="button" class="btn btn-primary" style="width:400px">Mint on Polygon</button>
+            <button id="mint-seed" type="button" class="btn btn-primary" style="width:400px; background-color: #f4d03f;">Mint on Polygon</button>
           </div>
       </div>
       <div class="col-2">
         <div class="card-transparent" style="width:500px" text-align="center">
-          <table>
-            <p class="text-center text-white text-right">Name : "Green Pea Seed"</p>
-            <p class="text-center text-white text-left">Soil Temp: 17</p>
-            <p class="text-center text-white">Soil Moisture: 14</p>
-            <p class="text-center text-white">lat : 144444</p>
-            <p class="text-center text-white">lon : 144444</p>
-            <p class="text-center text-white">Seed Date: 03-11-22</p>
-            <p class="text-center text-white">Total Days: 20</p>
-          </table>
+          <div class="row">
+            <div class="col-6">
+              <p class="text-white">Name"</p>
+              <p class="text-white">Soil Temp</p>
+              <p class="text-white">Soil Moisture</p>
+              <p class="text-white">lat</p>
+              <p class="text-white">lon</p>
+              <p class="text-white">Seed Date</p>
+              <p class="text-white">Total Days</p>
+            </div>
+          <div class="col-6">
+            <p class="text-white">Green Pea Seed</p>
+            <p class="text-white">17</p>
+            <p class="text-white">14</p>
+            <p class="text-white">144444</p>
+            <p class="text-white">144444</p>
+            <p class="text-white">03-11-22</p>
+            <p class="text-white">20</p>
+          </div>
         </div> 
+        </div>
     </div>
     </div>
     <br>
