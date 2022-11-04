@@ -57,12 +57,28 @@
   width: 50%;
 }
 
+nav {
+  font-family: 'VT323', sans-serif !important;
+}
+
+body {
+  font-family: 'VT323', sans-serif !important;
+}
+
+.bg-image {
+        background-image: url("../images/back-ground.svg");
+        background-size: cover;
+        height: 100%;
+      }
+
 </style>
 
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=VT323:400,300,700' rel='stylesheet' type='text/css'>
+        
     <title>Peas for Climate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous">
@@ -113,14 +129,16 @@
       });
     </script>
   </nav>
-  <div class="container"><br>
-    <h1>Welcome to Peagotchi collectables</h1>
+  <div class="container-fluid bg-image">
+    <!-- background image -->
+    <h1><b>WELCOME TO PEAGOTCHI COLLECTABLES</b></h1>
     <p>Contract Address : 0x7618f41e0b4be75d0ca163987053a6ae9d92c7da</p>
     <br>
     <br>
     <div class="row">
-      <div class="col-6">
-          <div class="card" style="width:400px">
+      <div class="col-3"></div>
+      <div class="col-4">
+          <div class="card-transparent" style="width:400px">
               <img class="card-img" src="../images/01/1-germinate.png" alt="...">
               <div class="card-img-overlay overlay-yellow text-white d-flex justify-content-center align-items-end">
                 <p>Germinate</p>
@@ -131,18 +149,21 @@
             <button id="mint-seed" type="button" class="btn btn-primary" style="width:400px">Mint on Polygon</button>
           </div>
       </div>
-      <div class="col-6">
-        <div class="card" style="width:500px" text-align="center">
-            <p class="text-center">Name : "Green Pea Seed"</p>
-            <p class="text-center">Soil Temp: 17</p>
-            <p class="text-center">Soil Moisture: 14</p>
-            <p class="text-center">lat : 144444</p>
-            <p class="text-center">lon : 144444</p>
-            <p class="text-center">Seed Date: 03-11-22</p>
-            <p class="text-center">Total Days: 20</p>
+      <div class="col-2">
+        <div class="card-transparent" style="width:500px" text-align="center">
+          <table>
+            <p class="text-center text-white text-right">Name : "Green Pea Seed"</p>
+            <p class="text-center text-white text-left">Soil Temp: 17</p>
+            <p class="text-center text-white">Soil Moisture: 14</p>
+            <p class="text-center text-white">lat : 144444</p>
+            <p class="text-center text-white">lon : 144444</p>
+            <p class="text-center text-white">Seed Date: 03-11-22</p>
+            <p class="text-center text-white">Total Days: 20</p>
+          </table>
         </div> 
     </div>
-    
+    </div>
+    <br>
   </div>
     <br>
     <br>
