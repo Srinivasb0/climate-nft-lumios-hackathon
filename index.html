@@ -70,12 +70,22 @@ body {
   font-family: 'VT323', sans-serif !important;
 }
 
+.navbar-bg {
+  background-image: url("../images/pg-navbar.png");
+  background-size: cover;
+  height: 100%;
+}
+
 .container-bg {
   background-image: url("../images/bg3.png");
   background-size: cover;
   height: 100%;
 }
 
+.btn-block {
+  width: 100px !important;
+  height: 20px !important;
+}
 </style>
 
 <html lang="en">
@@ -95,9 +105,10 @@ body {
     <!-- Just an image -->
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand mb-0 h1" href="#">
-        Peagotchi<br>
+        <!-- <img style="max-width:100px" src="../images/pg-logo.png"> -->
+        Peagotchi<br> 
         Climate NFT
-        </a>
+        </a> 
       </a>
       <a class="navbar-brand mb-0 h1" href="#">
         Home
@@ -154,26 +165,23 @@ body {
             <button id="mint-seed" type="button" class="btn btn-primary" style="width:400px; background-color: #f4d03f;">Mint on Polygon</button>
           </div>
       </div>
-      <div class="col-2">
+      <div class="col-4">
         <div class="card-transparent" style="width:500px" text-align="center">
           <div class="row">
-            <div class="col-6">
-              <p class="text-white">Name"</p>
+            <div class="col-4"></div>
+            <div class="col-4">
+              <p class="text-white">Name</p>
               <p class="text-white">Soil Temp</p>
               <p class="text-white">Soil Moisture</p>
               <p class="text-white">lat</p>
               <p class="text-white">lon</p>
-              <p class="text-white">Seed Date</p>
-              <p class="text-white">Total Days</p>
             </div>
-          <div class="col-6">
-            <p class="text-white">Green Pea Seed</p>
-            <p class="text-white">17</p>
-            <p class="text-white">14</p>
-            <p class="text-white">144444</p>
-            <p class="text-white">144444</p>
-            <p class="text-white">03-11-22</p>
-            <p class="text-white">20</p>
+          <div class="col-4">
+            <p><button type="button" class="btn btn-outline-primary btn-block text-wrap">Green Pea field</button></p>
+            <p><button type="button" class="btn btn-outline-primary btn-block">17.5</button></p>
+            <p><button type="button" class="btn btn-outline-primary btn-block">14</button></p>
+            <p><button type="button" class="btn btn-outline-primary btn-block">75.86198</button></p>
+            <p><button type="button" class="btn btn-outline-primary btn-block">22.649023</button></p>
           </div>
         </div> 
         </div>
