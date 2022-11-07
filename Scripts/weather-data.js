@@ -1,6 +1,9 @@
+import fs from 'fs';
 import { Revise } from 'revise-sdk';
 import fetch from "node-fetch";
-import fs from "fs";
+
+
+// import fs from "fs";
 
 
 // API Keys
@@ -37,14 +40,22 @@ const API = async function() {
 		'soil_moisture' : soil_moisture
 	}
 	var today = new Date();
-	var filename = 'soil-data-' + today+".json";
+	var filename = "../data/soil-data/" + 'soil-data-' + today+".json";
 	const daily_soil_data = JSON.stringify(api_data)
 	fs.writeFileSync(filename, daily_soil_data);
+	// return api_data['soil_temp'], api_data['soil_moisture']
 }
+/* collects weather data for each 2 seconds
+	120 days of growth simulated to 12 iterations
+*/
+
 
 async function run() {
-    revise.every('20s').listenTo(API).start(async (data) => {
-    console.log("Daily data")
-  })
+	var i = 1;
+	await revise.every('2s').listenTo(API).start(async(data) => {
+		console.log(i);
+		i++;
+	});
 }
-run()
+
+run();
